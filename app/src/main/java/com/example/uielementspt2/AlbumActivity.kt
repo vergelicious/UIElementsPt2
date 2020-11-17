@@ -1,0 +1,45 @@
+package com.example.uielementspt2
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.GridView
+import android.widget.ListView
+
+class AlbumActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_album)
+
+        val SongsGridView = findViewById<GridView>(R.id.SongsGridView)
+
+        SongsGridView.adapter = AlbumAdapter(applicationContext)
+        SongsGridView.onItemClickListener = AdapterView.OnItemClickListener{ parent, v, position, id ->
+            val intent = Intent(this, AlbumDetailsActivity::class.java)
+            var songsDisplay = arrayListOf<String>()
+            var uri: String = ""
+            if (position == 0) {
+                uri = "@drawable/oned"
+                songsDisplay.clear()
+                songsDisplay.addAll(resources.getStringArray(R.array.oneDirection))
+            } else if (position == 1) {
+                uri = "@drawable/fivesec"
+                songsDisplay.clear()
+                songsDisplay.addAll(resources.getStringArray(R.array.FiveSeconds))
+            } else {
+                uri = "@drawable/jasond"
+                songsDisplay.clear()
+                songsDisplay.addAll(resources.getStringArray(R.array.JasonD))
+            }
+            intent.putStringArrayListExtra("songs", songsDisplay )
+            intent.putExtra("album",  uri)
+            intent.putExtra("position", position)
+            startActivity(intent)
+        }
+
+
+    }
+}

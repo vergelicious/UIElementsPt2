@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">UIElementsPt2</string>
+    <string-array name="oneDirection">
+        <item>Best Song Ever</item>
+        <item>History</item>
+        <item>Night Changes</item>
+        <item>Steal My Girl</item>
+        <item>You &amp; I</item>
+    </string-array>
+    <string-array name="FiveSeconds">
+        <item>Amnesia</item>
+        <item>Easier</item>
+        <item>Lie To Me</item>
+        <item>No Shame</item>
+        <item>Old Me</item>
+    </string-array>
+    <string-array name="JasonD">
+        <item>Savage Love</item>
+        <item>Swalla</item>
+        <item>Talk Dirty</item>
+        <item>Take You Dancing</item>
+        <item>Wiggle</item>
+    </string-array>
 </resources>
