@@ -3,16 +3,13 @@ package com.example.uielementspt2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.GridView
-import android.widget.ListView
 
-class AlbumActivity : AppCompatActivity() {
+class AlbumsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_album)
+        setContentView(R.layout.activity_albums)
 
         val SongsGridView = findViewById<GridView>(R.id.SongsGridView)
 

@@ -12,10 +12,10 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
 
-class SongsActivity : AppCompatActivity() {
+class QueuedSongsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_songs)
+        setContentView(R.layout.activity_queuedsongs)
 
         val songsDisplayList = intent.getStringArrayListExtra("songs")
         val songsDisplayArray = songsDisplayList!!.toTypedArray()

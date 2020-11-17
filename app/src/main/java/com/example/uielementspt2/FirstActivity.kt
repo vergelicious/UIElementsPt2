@@ -8,7 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 
-class MainActivity : AppCompatActivity() {
+class FirstActivity : AppCompatActivity() {
 
     val qSongs = ArrayList<String>()
     val songsArray = arrayOf("Amnesia", "Best Song Ever", "Easier", "History", "Lie To Me", "Night Changes",
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_first)
 
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, songsArray)
         val songsListView = findViewById<ListView>(R.id.songsListView)
@@ -59,15 +59,15 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.go_to_songs -> {
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, FirstActivity::class.java))
                 true
             }
             R.id.go_to_album -> {
-                startActivity(Intent(this, AlbumActivity::class.java))
+                startActivity(Intent(this, AlbumsActivity::class.java))
                 true
             }
             R.id.go_to_queue -> {
-                val intent = Intent(this, SongsActivity::class.java)
+                val intent = Intent(this, QueuedSongsActivity::class.java)
                 intent.putStringArrayListExtra("songs", qSongs)
                 startActivity(intent)
                 true

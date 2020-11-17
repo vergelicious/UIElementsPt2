@@ -11,9 +11,9 @@
         android:theme="@style/Theme.UIElementsPt2">
         <activity android:name=".songs_menu"></activity>
         <activity android:name=".AlbumDetailsActivity" />
-        <activity android:name=".AlbumActivity" />
-        <activity android:name=".SongsActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".AlbumsActivity" />
+        <activity android:name=".QueuedSongsActivity" />
+        <activity android:name=".FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
