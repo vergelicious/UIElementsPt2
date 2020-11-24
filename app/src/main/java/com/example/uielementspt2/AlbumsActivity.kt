@@ -17,7 +17,7 @@ class AlbumsActivity : AppCompatActivity() {
         SongsGridView.onItemClickListener = AdapterView.OnItemClickListener{ parent, v, position, id ->
             val intent = Intent(this, AlbumDetailsActivity::class.java)
             var songsDisplay = arrayListOf<String>()
-            var uri: String = ""
+            var uri: String
             if (position == 0) {
                 uri = "@drawable/oned"
                 songsDisplay.clear()
