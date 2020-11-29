@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.GridView
 
+var songsDisplay = ArrayList<String>()
+var albumURI = String
+
 class AlbumsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -22,7 +22,7 @@ class FirstActivity : AppCompatActivity() {
         songsArray.addAll(resources.getStringArray(R.array.JasonD))
 
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, songsArray)
-        val songsListView = findViewById<ListView>(R.id.songsListView)
+        var songsListView = findViewById<ListView>(R.id.songsListView)
         songsListView.adapter = adapter
         registerForContextMenu(songsListView)
     }
@@ -33,9 +33,8 @@ class FirstActivity : AppCompatActivity() {
             menuInfo: ContextMenu.ContextMenuInfo?
     ) {
         super.onCreateContextMenu(menu, v, menuInfo)
-        val inflater: MenuInflater = menuInflater.apply {
-            inflate(R.menu.songs_menu, menu)
-        }
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.songs_menu, menu)
     }
 
         override fun onContextItemSelected(item: MenuItem): Boolean {
