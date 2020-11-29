@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.ContextMenu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -24,13 +23,17 @@ class AlbumDetailsActivity : AppCompatActivity() {
 
         val albumDetailsListView = findViewById<ListView>(R.id.albumNameTextView)
 
+        val title = findViewById<TextView>(R.id.albumTitle_new)
+        title.setText(intent.getStringExtra("albumTitle").toString())
+
         var imageResource = getResources().getIdentifier(uri, null, getPackageName())
         var res = getResources().getDrawable(imageResource)
         AlbumCover.setImageDrawable(res)
 
-        adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, songsArray)
+        adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, albumSongs)
         albumDetailsListView.adapter = adapter
         registerForContextMenu(albumDetailsListView)
+
     }
     override fun onCreateContextMenu(
             menu: ContextMenu?,

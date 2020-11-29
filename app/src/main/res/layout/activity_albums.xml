@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".AlbumsActivity">
 
-    <GridView
-        android:id="@+id/SongsGridView"
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center"
